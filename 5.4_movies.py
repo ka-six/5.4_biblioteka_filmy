@@ -102,3 +102,19 @@ def top_titles():
         print(y)
 
 top_titles()
+
+def dodaj_sezon():
+    podaj_tytul = input("Podaj tytuł dodawanego serialu:")
+    podaj_rok = input("Podaj rok wydania dodawanego serialu:")
+    podaj_gatunek = input("Podaj gatunek dodawanego serialu:")
+    podaj_sezon = input("Podaj numer sezonu dodawanego serialu:")
+    podaj_ile_odcinkow = input("Podaj liczbę odcinków sezonu:")
+    kolejny_odcinek = 1
+    for p in range(int(podaj_ile_odcinkow)):
+        series_only_sorted.append(Series(tytul=podaj_tytul, rok_wydania=podaj_rok, gatunek=podaj_gatunek, liczba_odtworzen=random.randrange(50, 1000), numer_odcinka=int(kolejny_odcinek), numer_sezonu=int(podaj_sezon)))
+        kolejny_odcinek += 1
+
+"""
+dodaj_sezon()
+get_series()
+"""
