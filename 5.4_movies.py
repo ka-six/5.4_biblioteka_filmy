@@ -22,9 +22,6 @@ gatunki = ["komedia", "horror", "Sci-Fi", "akcja", "dramat", "dokumentalny"]
 for i in range(10):
     lista.append(Movies(tytul=fake.word(), rok_wydania=random.randrange(1980, 2021), gatunek=fake.word(gatunki), liczba_odtworzen=random.randrange(50, 1000)))
 
-A = Movies(tytul=fake.word(), rok_wydania=random.randrange(1980, 2021), gatunek=fake.word(gatunki), liczba_odtworzen=random.randrange(50, 1000))
-print(type(A))
-
 
 class Series(Movies):
     def __init__(self, numer_odcinka, numer_sezonu, *args,  **kwargs):
