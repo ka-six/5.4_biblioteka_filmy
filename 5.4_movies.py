@@ -22,6 +22,9 @@ gatunki = ["komedia", "horror", "Sci-Fi", "akcja", "dramat", "dokumentalny"]
 for i in range(10):
     lista.append(Movies(tytul=fake.word(), rok_wydania=random.randrange(1980, 2021), gatunek=fake.word(gatunki), liczba_odtworzen=random.randrange(50, 1000)))
 
+A = Movies(tytul=fake.word(), rok_wydania=random.randrange(1980, 2021), gatunek=fake.word(gatunki), liczba_odtworzen=random.randrange(50, 1000))
+print(type(A))
+
 
 class Series(Movies):
     def __init__(self, numer_odcinka, numer_sezonu, *args,  **kwargs):
@@ -37,7 +40,7 @@ for i in range(10):
 movies_only = []
 
 for x in lista:
-    if isinstance(x, Movies):
+    if type(x) == Movies:
         movies_only.append(x)
 movies_only_sorted = sorted(movies_only, key=lambda a: a.tytul)
 
@@ -45,7 +48,6 @@ def get_movies():
     print("\nOto filmy znajdujące się w bazie:")
     for y in movies_only_sorted:
         print(y)
-#w tym wypadku pokazuje i filmy i seriale, bo seriale dziedziczą po filmach - jak to rozwiązać, by pokazywało tylko filmy? punkt 7
 
 series_only = []
 
@@ -58,7 +60,7 @@ def get_series():
     print("\nOto seriale znajdujące się w bazie:")
     for z in series_only_sorted:
         print(z)
-#gotowa lista nie jest posortowana - dlaczego?
+
 get_movies() 
 get_series()
 
